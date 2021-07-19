@@ -11,6 +11,6 @@ The next graph demonstrates what was happening with the home towns on a more loc
 
 ![Scotland Map](https://media.giphy.com/media/LZNd261JebB0ZGBotc/giphy.gif)
 
-To make these maps, I used the folium library in Python, with selium and a chrome driver to create the gifs at the end. 
+To make these maps, I used the folium library in Python, with Selenium and a chrome driver to create the gifs at the end. 
 
 It has been really fun to once again combine some map work to provide more historical insights, this project has a lot more potential, but we were only given a set 5 weeks to work on it. If I had more time, it would be really fun to explore some of the overall trends in undergraduates' locations and look through more records (such as the overall graduation archive material) to get more extensive data to make the maps with. 
