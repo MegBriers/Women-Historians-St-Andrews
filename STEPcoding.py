@@ -42,12 +42,11 @@ for i in range(0,61):
 
 list_of_years = ['1906', '1914', '1923','1935', '1945', '1955', '1965', '1975']
 
-
-# Turn ZoomControl off in each html file
-
-
 from folium.plugins import FloatImage
+# the legend for the graph
 image_file = 'C:/Users/Meg/Desktop/image2crop.PNG'
+
+# code based on : https://towardsdatascience.com/how-to-make-an-animated-gif-map-in-python-using-folium-and-imageio-91d3fc60d084
 
 for i in range(len(list_of_years)):
 
@@ -64,13 +63,12 @@ for i in range(len(list_of_years)):
     
     # add all the markers 
     markers = [[list_lat[j], list_long[j],data.iloc[j]['Class']] for j in range(len(data)) if str(int(data.iloc[j]['Graduation Year'])) == list_of_years[i]]
-    
+    # different colours to represent different degree classifications 
     colors = ['red','blue','yellow']
     # add all the markers
     for k in range(len(markers)):
         degreeClass = int(markers[k][2])
         colorz = colors[degreeClass - 1]
-        print(colorz)
         folium.CircleMarker(
         location=[markers[k][0], markers[k][1]],
         radius=7,
@@ -79,7 +77,6 @@ for i in range(len(list_of_years)):
         fill_opacity=1
         ).add_to(m_i)
         
-    #print(i)
     m_i.save('GifMap/total_perYear_' + str(list_of_years[i]) + '.html')
     
 
@@ -119,8 +116,6 @@ for i in range(len(list_of_years)):
     browser.save_screenshot('GifMap/total_perYear_' + str(list_of_years[i]) + '.png')
     browser.quit()
     
-    #remove html files
-    #os.remove('total_perYear_' + str(list_of_years[i]) + '.html')
 # Create Gif and remove each .png file
 
 image_path = Path()
